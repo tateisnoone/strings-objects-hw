@@ -7,6 +7,18 @@
 // ```
 
 let person = {
-  salary: 1000,
+  _salary: 1000,
+  get salary() {
+    let currentDate = new Date();
+    const lastDayOfMonth = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth() + 1,
+      0
+    );
+    let leftDays = lastDayOfMonth.getDate() - currentDate.getDate();
+    if (leftDays > 20) {
+      return "good salary";
+    } else return "bad salary";
+  },
 };
-console.log(person);
+console.log(person.salary);

@@ -11,16 +11,22 @@
 // searchWord("aa, bb, cc, dd, aa", "aa"); // "'aa' was found 2 times."
 // searchWord("sunshine", "sun"); // "'sun' was found 1 times."
 // ```
-function searchWord(string, string1) {
+
+function searchWord(string, wordToFind) {
+  let words = string.split(" ");
   let count = 0;
-  let words = "";
-  if (typeof string !== "string" || typeof string1 !== "string") {
+  if (typeof string !== "string" || typeof wordToFind !== "string") {
     throw new Error("not a string");
   } else {
-    if (string.includes(string1)) {
+    for (let i = 0; i < words.length; i++) {
+      if (words[i].toLowerCase() === wordToFind.toLowerCase()) {
+        count++;
+      }
     }
   }
+  return count;
 }
 let string = "fox wolf fox fox lion fox";
 let string1 = "fox";
-searchWord(string, string1);
+let counted = searchWord(string, string1);
+console.log(`'${string1}' was found ${counted} times`);

@@ -33,16 +33,19 @@
 //another version - this doesn't work as well
 
 function reverseCase1(sentence) {
+  let word = "";
+  let words = "";
   if (typeof sentence !== "string") {
     throw new Error("not a string");
   } else {
     for (let i = 0; i < sentence.length; i++) {
       if (sentence[i] === sentence[i].toLowerCase()) {
-        return sentence[i].replace(sentence[i].toUpperCase);
+        word += sentence[i].replace(sentence[i].toUpperCase);
       } else {
-        return sentence[i].replace(sentence[i].toLowerCase);
+        words += sentence[i].replace(sentence[i].toLowerCase);
       }
     }
+    console.log(word + words);
   }
 }
 let sentence = "AbCdEf Jkm";
