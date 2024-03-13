@@ -29,15 +29,6 @@ var books = [
     dateOfRead: NaN,
   },
 ];
-// Object.defineProperty(books, "daysAgo", {
-//   get() {
-//     let currentDate = new Date();
-//     var daysAgo = Math.floor(
-//       (currentDate - dateOfRead) / (1000 * 60 * 60 * 24)
-//     );
-//   },
-// });
-console.log(books);
 
 function readingStatus(books) {
   books.forEach(function (book) {
